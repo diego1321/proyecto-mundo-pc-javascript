@@ -2,9 +2,9 @@ class Producto{
     static contadorProductos = 0;
 
     constructor(nombre, precio){
+        this._idProducto = ++Producto.contadorProductos;
         this._nombre = nombre;
         this._precio = precio;
-        this._idProducto = ++Producto.contadorProductos;
     }
     get idProducto(){
         return this._idProducto;
@@ -29,11 +29,26 @@ class Producto{
 
 class Orden{
     static contadorOrdenes = 0;
-
+    static MAXProducto = 5;
     constructor(){
         this._idOrden = ++Orden.contadorOrdenes;
+        let Producto = ['pan', 'queso'];
+        contadorProductosAgregados = 0;
+        const MAXProducto = 5;
     }
-   
+   agregarProducto(){
+    return this._nombre + ' ' + this ._precio + this.contadorProductosAgregados
+   }
+   calcularTotal(){
+       return this._idProducto + ' ' + this._idOrden;
+   }
+   toString(){
+       return this.calcularTotal;
+   }
 }
-const Producto =['carne', 'pan', 'queso'];
-const MAXProducto  = (5)
+
+
+
+
+
+
